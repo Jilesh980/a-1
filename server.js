@@ -4,10 +4,11 @@
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: JILESH PATEL Student ID: 133261206 Date: SEPTEMBER 16, 2022
-*  Heroku Link: https://arnin-web422-ass1.herokuapp.com/
+*  Name: Jilesh Sanjaykumar Patel Student ID: 133261206 Date: 09/16/2022
+*  Cyclic Link: _______________________________________________________________
 *
 ********************************************************************************/ 
+
 
 const express = require("express");
 const path = require('path');
@@ -15,7 +16,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const MoviesDB = require("./modules/moviesDB.js");
-// Load dotenv variables
+
 require('dotenv').config();
 const {MONGODB_CONN_STRING} = process.env;
 const db = new MoviesDB();
