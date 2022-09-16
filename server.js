@@ -4,7 +4,7 @@
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: JILESH PATEL Student ID: 135745180 Date: SEPTEMBER 16, 2022
+*  Name: JILESH PATEL Student ID: 133261206 Date: SEPTEMBER 16, 2022
 *  Heroku Link: https://arnin-web422-ass1.herokuapp.com/
 *
 ********************************************************************************/ 
@@ -19,7 +19,7 @@ const MoviesDB = require("./modules/moviesDB.js");
 require('dotenv').config();
 const {MONGODB_CONN_STRING} = process.env;
 const db = new MoviesDB();
-//const myData = dataService(`mongodb+srv://${process.env.dbUser}:${process.env.dbPass}@cluster0-apgkj.mongodb.net/${process.env.dbName}?retryWrites=true&w=majority`);
+
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,12 +35,11 @@ db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
 });
 
 
-// ************* API Routes
 app.get("/", (req, res) => {
     res.json({message: "API Listening"})
 });
 
-// POST /api/sales (NOTE: This route must read the contents of the request body)
+
 app.post("/api/movies", (req,res) => {
     myData.addNewMovie(req.body)
     .then(() => {
@@ -52,7 +51,7 @@ app.post("/api/movies", (req,res) => {
 });
 
 
-// GET /api/sales (NOTE: This route must accept the numeric query parameters "page" and "perPage", ie: /api/sales?page=1&perPage=5 )
+
 app.get("/api/movies", (req,res) => {
     myData.getAllMovies(req.query.page, req.query.perPage)
         .then((movies) => {
@@ -64,7 +63,6 @@ app.get("/api/movies", (req,res) => {
 });
 
 
-// GET /api/sales (NOTE: This route must accept a numeric route parameter, ie: /api/sales/5bd761dcae323e45a93ccfe8)
 app.get("/api/movies/:id", (req,res) => {
     myData.getMovieById(req.params.id)
         .then((movies) => {
@@ -75,8 +73,6 @@ app.get("/api/movies/:id", (req,res) => {
         });
 });
 
-
-// PUT /api/sales (NOTE: This route must accept a numeric route parameter, ie: /api/sales/5bd761dcae323e45a93ccfe8 as well as read the contents of the request body)
 app.put("/api/movies/:id", (req,res) => {
     myData.updateMovieById(req.body, req.params.id)
         .then(() => {
@@ -87,8 +83,6 @@ app.put("/api/movies/:id", (req,res) => {
         });
 });
 
-
-// DELETE /api/sales (NOTE: This route must accept a numeric route parameter, ie: /api/sales/5bd761dcae323e45a93ccfe8)
 app.delete("/api/movies/:id", (req,res) => {
     myData.deleteMovieById(req.params.id)
         .then(() => {
