@@ -5,7 +5,7 @@
 *  (including web sites) or distributed to other students.
 * 
 *  Name: Jilesh Sanjaykumar Patel Student ID: 133261206 Date: 09/16/2022
-*  Cyclic Link: https://filthy-cuff-foal.cyclic.app / https://bright-jumpsuit-goat.cyclic.app
+*  Cyclic Link: https://bright-jumpsuit-goat.cyclic.app
 *
 ********************************************************************************/ 
 
